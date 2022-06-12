@@ -24,7 +24,7 @@
 ## 실패한 멀티 모듈 프로젝트 
 공통으로 사용하는 코드들을 모은 것 모듈을 `common` 으로 지었다고 가정 
 
-[사진 2]
+![image](https://user-images.githubusercontent.com/27190617/173220837-84da19e7-ce75-4a4b-8481-8f34a09bfa26.png)
 
 
 ### 공통(Common) 모듈의 저주 
@@ -84,6 +84,7 @@ class DService {
 - 문제는 어플리케이션들이 사용하는 의존성이 다를 수 있다. 
   - ex) DB를 사용하지 않는 어플리케이션이 공통 모듈을 위해 db와 connection을 맺게되는 의존성 
   - 결국 이거는 장애 포인트가 될 것 
+![image](https://user-images.githubusercontent.com/27190617/173220850-75471dc3-a9a1-4d8a-84c2-1aa4c549e359.png)
 
 공통 설정 
 - 설정까지 공통 모듈로 몰게 되는 경우도 많이 보인다. 
