@@ -13,6 +13,24 @@
           </set>
         </option>
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/spring" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring/JPA" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/spring/JPA" />
+          </set>
+        </option>
+      </GradleProjectSettings>
     </option>
   </component>
 </project>
