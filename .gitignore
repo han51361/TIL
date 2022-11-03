@@ -1,0 +1,5 @@
+/rust-playground/target/
+/rust-playground/**/target/
+*.toml
+*.lock
+
