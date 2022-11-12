@@ -12,21 +12,18 @@ propagation의 옵션
 | NEVER | non-transactional 로 실행되며 부모 트랜잭션이 존재하면 Exception이 발생한다.                                                                                                                                                                                                                                                                                  |
 
 ### `REQUIRED`
-
-![img.png](img.png)![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ed27a81e-deab-4f25-992a-ad7de91f6212/Untitled.png)
+![image](https://user-images.githubusercontent.com/27190617/201462867-622cc7e3-f7e1-4247-999a-166febbed8fb.png)
 
 > ref. [https://devlog-wjdrbs96.tistory.com/424](https://devlog-wjdrbs96.tistory.com/424)
 >
 
 ## Spring에서의 `@Transactional` 에 대한 Default isolation Level
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2a0648b3-b2ce-4c87-90c3-4e0b29dac463/Untitled.png)
-
+![image](https://user-images.githubusercontent.com/27190617/201462875-eb595d6b-18cd-45e5-a9d4-bfc0c73e87ab.png)
 - default 설명
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7a30686d-a840-46b9-ae34-3535c60f87de/Untitled.png)
-
-→ `DEFAULT`설명을 보면 `JDBC isolation Level` 동일하게 설정.
+![image](https://user-images.githubusercontent.com/27190617/201462886-e03a6c6b-bd5a-456d-9e98-ad556af67958.png)
+→ `DEFAULT`설명을 보면 `JDBC isolation Level` 동일하게 설정.
 
 즉,  `MySQL InnoDB`를 사용 →  `REPEATABLE READ`가 `DEFAULT`로 사용
 
@@ -48,7 +45,7 @@ propagation의 옵션
     - `Extends` 방식으로 프록시 객체 구현
     - JDK 보다 성능 우월 , 최근 Spring Boot 기본 AOP 전략
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ba93a205-b1f3-4935-a0e4-00068d51b4fd/Untitled.png)
+![image](https://user-images.githubusercontent.com/27190617/201462895-4c7efba3-39c5-4334-a332-5e7669c9133d.png)
 
 `JDK Proxy`의 경우 : AOP를 적용하여 구현된 클래스의 인터페이스를 프록시 객체로 구현해서 코드를 끼워넣는 방식이다.
 
@@ -56,7 +53,9 @@ Spring은 `@Transactional`이 적용된 모든 클래스/메서드에 대한 `Pr
 
 - 프록시는 프레임워크가 트랜잭션을 시작/커밋하기 위해 실행 중인 메서드의 전후로 트랜잭션 로직을 주입
 
-  ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7a84f88e-d0f3-475e-b86d-1d1f9737123e/Untitled.png)
+	![image](https://user-images.githubusercontent.com/27190617/201462901-088a5dec-87ce-4ebf-9a1e-73d87410f400.png)
+
+
 
 
 왼쪽은 `@Transactional`을 적용하기전 상태,
@@ -72,7 +71,7 @@ Controller는 타깃의 메서드를 호출하는것으로 생각하지만 실�
 
 ### private fun → `@Transactional` 적용 불가
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2b538e31-defe-438a-a3f7-e03cbcd1788e/Untitled.png)
+![image](https://user-images.githubusercontent.com/27190617/201462907-5356e370-da58-45d7-ad37-7b9faac9cc4e.png)
 
 → proxy 객체에서의 구현 코드 예시
 
@@ -123,7 +122,7 @@ public class UserService {
 
 - jpa가 만든 proxy 객체 Injection
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/38080595-40a9-428e-8e8e-b0aab3743fcf/Untitled.png)
+![image](https://user-images.githubusercontent.com/27190617/201462917-37d1dc3c-e576-4856-83a6-b091a3632479.png)
 
 - 중간에 부모에 대해 RuntimeException 발생 시키기
 
@@ -150,8 +149,7 @@ public User createUser(int index){
     return user;
 }
 ```
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5e4cb72c-06e4-43a1-9757-92567709ebce/Untitled.png)
+![image](https://user-images.githubusercontent.com/27190617/201462929-6006fa50-754a-4615-9389-82505953a29c.png)
 
 > **10번의 createUser가 실행됐지만 최종적으로는 0개가 생성된 User**
 >
@@ -207,3 +205,5 @@ Proxy형태로 동작하게 되면 위 과정대로 동작하기 떄문에 최�
 ### `@Test`  + `@Transactional`  = Default (Rollback)
 
 - rollback을 원하지 않을 경우 : `@Rollback(false)` 로 설정 
+
+> ref: https://cobbybb.tistory.com/17 , https://kangyb.tistory.com/15
