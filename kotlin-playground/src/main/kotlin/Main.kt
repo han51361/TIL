@@ -23,4 +23,14 @@ class Main {
         }
 
     }
+
+    // apply vs with : apply - 본인에게 전달된 객체(수신 객체)를 반환한다.
+    fun useApply() = StringBuilder().apply {
+        for (letter in 'A'..'Z') {
+            append(letter)
+        }
+
+        append("\nresult : set")
+    }.toString()
+
 }
