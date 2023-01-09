@@ -1,6 +1,7 @@
 # CQRS 와 EventSourcing
 
-CQRS는 네이밍에서 알 수 있듯이 명령과 쿼리의 역할을 구분 한다는 것이다. 
+CQRS는 네이밍에서 알 수 있듯이 명령과 쿼리의 역할을 구분 한다는 것이다.
+
 즉 커맨드`( Create - Insert, Update, Delete : 데이터를 변경)` 와 쿼리`( Select - Read : 데이터를 조회)`의 책임을 분리
 
 ### 탄생 배경
